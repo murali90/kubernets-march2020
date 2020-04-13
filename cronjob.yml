@@ -1,11 +1,12 @@
 apiVersion: batch/v1beta1
-kind: Cronjob
+kind: CronJob
 metadata:
   name: kplabs-cronjob
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
     spec:
+      template:
       containers:
       - name: kplabs-pods
         image: busybox
