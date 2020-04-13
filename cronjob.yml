@@ -1,0 +1,17 @@
+apiVersion: batch/v1beta1
+kind: Cronjob
+metadata:
+  name: kplabs-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      containers:
+      - name: kplabs-pods
+        image: busybox
+        args:
+        - /bin/sh
+        - -c 
+        - date; echo Hello From k8s
+      restartPolicy: OnFailure 
+  

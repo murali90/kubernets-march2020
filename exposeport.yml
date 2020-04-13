@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: exposeport
+spec:
+  containers:
+  - image:  nginx
+    name:  exposeport
+    ports:
+    -  containerPort: 8080
+  

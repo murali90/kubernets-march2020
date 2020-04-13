@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kplabs-rollingupdates
+spec:
+  replicas: 5
+  selector:
+    matchLabels: 
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      -  image: nginx:1.17.3
+         name:  php-redis
